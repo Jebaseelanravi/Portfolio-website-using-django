@@ -1,0 +1,94 @@
+
+{% extends "base.html" %}
+
+{% block page_content %}
+
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+.profile-card .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 1350px;
+  margin: center;
+  text-align: center;
+  font-family: arial;
+  float:center;
+}
+
+
+.profile-card .card img{
+    margin: auto 520px;
+    width: 350px;
+    height: 300px;
+    border-radius: 60%;
+}
+
+<!--.col-md-4-->
+<!-- {-->
+<!--  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);-->
+<!--  margin: auto;-->
+<!--  text-align: center;-->
+<!--  font-family: arial;-->
+
+<!--}-->
+
+<!--.title {-->
+<!--  color: grey;-->
+<!--  font-size: 18px;-->
+<!--}-->
+
+<!--a {-->
+<!--  text-decoration: none;-->
+<!--  font-size: 22px;-->
+<!--  color: black;-->
+<!--}-->
+
+<!--button:hover, a:hover {-->
+<!--  opacity: 0.7;-->
+<!--}-->
+
+
+
+
+
+</style>
+
+<div class="profile-card">
+  <div class="card" >
+  <img  class="card-img-top" src="{% static 'img/1.jpg' %}" alt="profile image" >
+  <div class="card-body">
+    <h5 class="card-title" >Jebaseelan Ravi</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Software Engineer</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+</div>
+
+
+
+<h1>Projects</h1>
+
+<div class="card-group">
+
+  {% for project in projects %}
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="card" style="width: 25rem;">
+      <img class="card-img-top" src="{% static project.image %}">
+      <div class="card-body">
+        <h5 class="card-title">{{project.title}}</h5>
+        <p class="card-text">{{project.description}}</p>
+        <a href={{project.github_link}} class="btn btn-primary" target="_blank">View code</a>
+      </div>
+    </div>
+  </div>
+</div>
+  {% endfor %}
+</div>
+
+ {% endblock %}
+
