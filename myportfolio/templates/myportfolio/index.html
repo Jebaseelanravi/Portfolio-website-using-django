@@ -9,22 +9,33 @@
 <style>
 
 .profile-card .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 1350px;
-  margin: center;
-  text-align: center;
-  font-family: arial;
-  float:center;
+<!--  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);-->
+<!--  width: 1250px;-->
+<!--  margin: center;-->
+<!--  text-align: center;-->
+<!--  font-family: arial;-->
+<!--  float:center;-->
 }
 
-
-.profile-card .card img{
-    margin: auto 520px;
-    width: 350px;
-    height: 300px;
-    border-radius: 60%;
+.profile-info{
+ margin-top:50px;
+ float: right;
+ margin-right:100px;
 }
 
+h4 {
+  margin-bottom: 30px;
+}
+
+#project-header {
+text-align: center
+}
+.containermy-4{
+
+  display: flex;
+  justify-content: left;
+  margin-left:150px;
+}
 <!--.col-md-4-->
 <!-- {-->
 <!--  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);-->
@@ -49,28 +60,30 @@
 <!--  opacity: 0.7;-->
 <!--}-->
 
-
-
-
-
 </style>
+<div class="profile-info">
 
-<div class="profile-card">
-  <div class="card" >
-  <img  class="card-img-top" src="{% static 'img/1.jpg' %}" alt="profile image" >
-  <div class="card-body">
-    <h5 class="card-title" >Jebaseelan Ravi</h5>
+    <h5 class="card-title" >Hey I'm Jebaseelan</h5>
     <h6 class="card-subtitle mb-2 text-muted">Software Engineer</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
+    <p target="_blank" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a target="_blank" href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/"><i class="fa fa-dribbble"></i></a>
+    <a target="_blank" href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/"><i class="fa fa-twitter"></i></a>
+    <a target="_blank" href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/"><i class="fa fa-linkedin"></i></a>
+    <a target="_blank" href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/"><i class="fa fa-facebook"></i></a>
 </div>
+
+<div class="containermy-4">
+    <div class="row text-center">
+      <div class="col-md-6 mb-4">
+        <img class="rounded-circle"  src="{% static 'img/2.jpg' %}" data-holder-rendered="true">
+      </div>
+    </div>
 </div>
 
 
 
-<h1>Projects</h1>
+
+<h4 id="project-header">My Projects</h4>
 
 <div class="card-group">
 
