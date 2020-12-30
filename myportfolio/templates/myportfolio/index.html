@@ -8,21 +8,23 @@
 
 <style>
 
-.profile-card .card {
-<!--  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);-->
-<!--  width: 1250px;-->
-<!--  margin: center;-->
-<!--  text-align: center;-->
-<!--  font-family: arial;-->
-<!--  float:center;-->
-}
+
 
 .profile-info{
  margin-top:50px;
  float: right;
- margin-right:100px;
+ margin-right:14rem;
+ font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ font-weight: 700;
+ color: #000000;
+
 }
 
+
+
+body{
+ background-color: #1abc9c;
+}
 h4 {
   margin-bottom: 30px;
 }
@@ -35,41 +37,37 @@ text-align: center
   display: flex;
   justify-content: left;
   margin-left:150px;
+  margin-top:50px;
 }
-<!--.col-md-4-->
-<!-- {-->
-<!--  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);-->
-<!--  margin: auto;-->
-<!--  text-align: center;-->
-<!--  font-family: arial;-->
+.fa{
+  color: #000000;
+}
 
-<!--}-->
+.contact {
+  background-color: lightgrey;
+  width: 550px;
+  border: 15px solid white;
+  padding: 50px;
+  margin: 20px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
 
-<!--.title {-->
-<!--  color: grey;-->
-<!--  font-size: 18px;-->
-<!--}-->
-
-<!--a {-->
-<!--  text-decoration: none;-->
-<!--  font-size: 22px;-->
-<!--  color: black;-->
-<!--}-->
-
-<!--button:hover, a:hover {-->
-<!--  opacity: 0.7;-->
-<!--}-->
+.email-me{
+background-color: skyblue;
+width:120px;
+}
 
 </style>
+<div class ="profile">
 <div class="profile-info">
 
     <h5 class="card-title" >Hey I'm Jebaseelan</h5>
     <h6 class="card-subtitle mb-2 text-muted">Software Engineer</h6>
     <p target="_blank" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a target="_blank" href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/"><i class="fa fa-dribbble"></i></a>
-    <a target="_blank" href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/"><i class="fa fa-twitter"></i></a>
-    <a target="_blank" href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/"><i class="fa fa-linkedin"></i></a>
-    <a target="_blank" href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/"><i class="fa fa-facebook"></i></a>
+
+
 </div>
 
 <div class="containermy-4">
@@ -80,6 +78,7 @@ text-align: center
     </div>
 </div>
 
+</div>
 
 
 
@@ -101,7 +100,16 @@ text-align: center
   </div>
 </div>
   {% endfor %}
-</div>
+</div >
 
+
+<div class="contact">
+    <h4>Contact me </h4>
+    <p> I love top contact with people and solve the problems and help the world</p>
+    <div class="email-me">
+        <a class="bt btn primary" href = "mailto:jebaseelanravi96@gmail.com">Send Email</a>
+    </div>
+
+</div>
  {% endblock %}
 
