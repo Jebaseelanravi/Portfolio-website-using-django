@@ -17,13 +17,15 @@
  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
  font-weight: 700;
  color: #000000;
+ font-color: green;
 
 }
 
 
 
-body{
- background-color: #1abc9c;
+body
+{
+ background-color: #fffff;
 }
 h4 {
   margin-bottom: 30px;
@@ -59,6 +61,38 @@ background-color: skyblue;
 width:120px;
 }
 
+.avatar {
+    background-color: black;
+    border: 5px solid red;
+}
+
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+
+}
+
+.skill {
+  flex: 12.5%;
+  padding: 0 50px;
+  max-width: 12.5%;
+}
+
+.skill img {
+  margin-top: 20px;
+  vertical-align: middle;
+  width: 100%;
+<!--  border: 0.5px solid black;-->
+}
+
+.div-border{
+ padding: 10px;
+ border: 0.5px solid black;
+}
+
+
 </style>
 <div class ="profile">
 <div class="profile-info">
@@ -73,7 +107,7 @@ width:120px;
 <div class="containermy-4">
     <div class="row text-center">
       <div class="col-md-6 mb-4">
-        <img class="rounded-circle"  src="{% static 'img/2.jpg' %}" data-holder-rendered="true">
+        <img class="rounded-circle avatar"  src="{% static 'img/2.jpg' %}" data-holder-rendered="true">
       </div>
     </div>
 </div>
@@ -101,6 +135,22 @@ width:120px;
 </div>
   {% endfor %}
 </div >
+
+
+<h4> My Skills</h4>
+
+<div class="div-border">
+
+    <div class="skills">
+    {% for skill in skills %}
+    <div class="skill">
+        <img id="skill-image" title={{skill.name}}  src={{skill.image}} alt={{skill.name}} class="skill-data">
+    </div>
+    {% endfor %}
+
+</div>
+</div>
+
 
 
 <div class="contact">
