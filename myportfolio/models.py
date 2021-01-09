@@ -41,3 +41,13 @@ class Skill(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Connection(models.Model):
+    your_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.your_name

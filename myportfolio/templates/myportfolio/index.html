@@ -1,6 +1,7 @@
 
 {% extends "base.html" %}
 
+{% load crispy_forms_tags %}
 {% block page_content %}
 
 {% load static %}
@@ -13,9 +14,9 @@
 .profile-info{
  margin-top:50px;
  float: right;
- margin-right:14rem;
+ margin-left:32rem;
  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
- font-weight: 700;
+<!-- font-weight: 700;-->
  color: #000000;
  font-color: green;
 
@@ -31,7 +32,7 @@ h4 {
   margin-bottom: 30px;
 }
 
-#project-header {
+#project-header,#skill-header {
 text-align: center
 }
 .containermy-4{
@@ -46,9 +47,9 @@ text-align: center
 }
 
 .contact {
-  background-color: lightgrey;
+  background-color: white;
   width: 550px;
-  border: 15px solid white;
+  border: 5px solid white;
   padding: 50px;
   margin: 20px;
   width: 50%;
@@ -62,8 +63,8 @@ width:120px;
 }
 
 .avatar {
-    background-color: black;
-    border: 5px solid red;
+    background-color: #66ffff;
+    border: 5px solid  #66ffff;
 }
 
 
@@ -75,9 +76,9 @@ width:120px;
 }
 
 .skill {
-  flex: 12.5%;
+  flex: 11.11%;
   padding: 0 50px;
-  max-width: 12.5%;
+  max-width: 11.11%;
 }
 
 .skill img {
@@ -89,7 +90,7 @@ width:120px;
 
 .div-border{
  padding: 10px;
- border: 0.5px solid black;
+ border: 0.1px solid  #bfbfbf;
 }
 
 
@@ -97,11 +98,19 @@ width:120px;
 <div class ="profile">
 <div class="profile-info">
 
-    <h5 class="card-title" >Hey I'm Jebaseelan</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Software Engineer</h6>
-    <p target="_blank" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h3 class ="name">Hey I'm Jebaseelan</h3>
+    <h6 class="card-subtitle mb-2 text-muted">Software Engineer in India</h6>
+    <p >Passionate about building delightful and impactful products that make a difference. Writer on Medium. Excited about tough problems, and always seeking to learn something new.I'm a self-driven, motivated, and
+        independent learner who discovered my passion for programming and software engineering midway through Electronics
+        degree.</p>
 
-
+    <div class="icon-bar">
+      <a href="https://www.facebook.com/jebaseelan.ravi" class="facebook"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/jebaseelan_ravi/" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.instagram.com/jebaseelan_ravi/" class="instagran"><i class="fa fa-instagram"></i></a>
+        <a href="https://github.com/Jebaseelanravi" class="instagran"><i class="fa fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+    </div>
 </div>
 
 <div class="containermy-4">
@@ -114,6 +123,7 @@ width:120px;
 
 </div>
 
+<hr>
 
 
 <h4 id="project-header">My Projects</h4>
@@ -135,9 +145,9 @@ width:120px;
 </div>
   {% endfor %}
 </div >
+<hr>
 
-
-<h4> My Skills</h4>
+<h4 id="skill-header" >My Skills</h4>
 
 <div class="div-border">
 
@@ -154,12 +164,18 @@ width:120px;
 
 
 <div class="contact">
-    <h4>Contact me </h4>
-    <p> I love top contact with people and solve the problems and help the world</p>
-    <div class="email-me">
-        <a class="bt btn primary" href = "mailto:jebaseelanravi96@gmail.com">Send Email</a>
-    </div>
+    <h3 align="center">Contact me </h3>
+    <form action="/myportfolio/contact" method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Send Now</button>
+  </form>
 
+<!--    <p> I love to connect with people and solve the problems and help the world</p>-->
+<!--    <div class="email-me">-->
+<!--        <a class="bt btn primary" href = "mailto:jebaseelanravi96@gmail.com">Send Email</a>-->
 </div>
+
+
  {% endblock %}
 
