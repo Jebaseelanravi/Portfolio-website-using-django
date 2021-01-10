@@ -1,1 +1,5 @@
-django
+Django==3.1.3
+django-crispy-forms==1.10.0
+django-split-settings==0.2.5
+Gunicorn
+
