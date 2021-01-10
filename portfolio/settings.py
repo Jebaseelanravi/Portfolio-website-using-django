@@ -11,11 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import  os
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -26,8 +25,7 @@ SECRET_KEY = '^tirljss^l-h%6x6=827d4hj)tg^q-v!mva8%u1^a*dg@g!1mf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jebaseelan.herokuapp.com','127.0.0.1']
-
+ALLOWED_HOSTS = ['jebaseelan.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -73,18 +71,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ddtgbr1mgf3re6',
+        'HOST': 'ec2-3-211-149-196.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER' : 'bgqquncesapjij',
+        'PASSWORD' : '128b76bc16894cff417d0b2b51fed293b3eb6bcfe73913608ccfb7a68d2605bd'
+
     }
 }
 
-
+# postgres://bgqquncesapjij:128b76bc16894cff417d0b2b51fed293b3eb6bcfe73913608ccfb7a68d2605bd@ec2-3-211-149-196.compute-1.amazonaws.com:5432/ddtgbr1mgf3re6
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -103,7 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -117,7 +118,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -125,7 +125,6 @@ USE_TZ = True
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
