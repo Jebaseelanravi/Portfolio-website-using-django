@@ -94,6 +94,70 @@ width:120px;
 }
 
 
+.resume{
+    padding-left: 80px;
+}
+
+.resume-title {
+
+  margin-top: 30px;
+  margin-bottom: 20px;
+
+}
+
+.resume .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #0563bb;
+  position: relative;
+}
+
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #0563bb;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+  font-size: 16px;
+  background: #f7f8f9;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+  padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+  padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #0563bb;
+}
+
+
+
+
 </style>
 <div class ="profile">
 <div class="profile-info">
@@ -106,11 +170,12 @@ width:120px;
 
     <div class="icon-bar">
       <a href="https://www.facebook.com/jebaseelan.ravi" class="facebook"><i class="fa fa-facebook"></i></a>
-      <a href="https://www.instagram.com/jebaseelan_ravi/" class="twitter"><i class="fa fa-twitter"></i></a>
         <a href="https://www.instagram.com/jebaseelan_ravi/" class="instagran"><i class="fa fa-instagram"></i></a>
         <a href="https://github.com/Jebaseelanravi" class="instagran"><i class="fa fa-github"></i></a>
       <a href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href=mailto:jebaseelanravi96@gmail.com" class="gmail"><i class="fa fa-envelope"></i></a>
     </div>
+    </section>
 </div>
 
 <div class="containermy-4">
@@ -161,7 +226,45 @@ width:120px;
 </div>
 </div>
 
+<h3 align="center" class="resume-title">Professional Experience</h3>
 
+<section id="resume" class="resume">
+ <div class="col-lg-6">
+            {% for exp in experiences %}
+            <div class="resume-item">
+              <h4>{{exp.designation}}</h4>
+                  {% if exp.is_present %}
+                    <h5>{{exp.start_date}} - present</h5>
+                {% else %}
+                    <h5>{{exp.start_date}} - {{exp.end_date}}</h5>
+                {% endif %}
+
+              <p><em>{{exp.company}}, {{exp.location}} </em></p>
+              <ul>
+                  {% if exp.responsibilities_1 is not None %}
+                    <li>{{exp.responsibilities_1}}</li>
+                  {% endif %}
+                  {% if exp.responsibilities_2 %}
+                    <li>{{exp.responsibilities_2}}</li>
+                  {% endif %}
+                  {% if exp.responsibilities_3 %}
+                    <li>{{exp.responsibilities_3}}</li>
+                  {% endif %}
+                  {% if exp.responsibilities_4 %}
+                    <li>{{exp.responsibilities_4}}</li>
+                  {% endif %}
+
+
+
+              </ul>
+            </div>
+            {% endfor %}
+
+          </div>
+
+</section>
+
+<hr>
 
 <div class="contact">
     <h3 align="center">Contact me </h3>

@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, Context
-from .models import Project, Blog, Skill, Connection
+from .models import Project, Blog, Skill, Connection,Experience
 # Create your views here.
 from .forms import NameForm
 from django.core.mail import send_mail
@@ -12,8 +12,9 @@ def index(request):
     template = loader.get_template("myportfolio/index.html")
     projects = Project.objects.all()
     skills = Skill.objects.all()
+    experiences = Experience.objects.all().order_by('-start_date')[:5]
     form = NameForm()
-    context = {'projects': projects, 'skills': skills, 'form': form}
+    context = {'projects': projects, 'skills': skills, 'form': form,'experiences':experiences}
     return HttpResponse(template.render(context, request))
 
 
@@ -49,7 +50,7 @@ def contact(request):
     else:
         form = NameForm()
 
-    return HttpResponseRedirect('/index')
+    return HttpResponseRedirect('/myportfolio')
 
 
 def projects(request):
