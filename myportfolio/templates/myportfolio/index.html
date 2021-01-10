@@ -162,18 +162,19 @@ width:120px;
 <div class ="profile">
 <div class="profile-info">
 
-    <h3 class ="name">Hey I'm Jebaseelan</h3>
-    <h6 class="card-subtitle mb-2 text-muted">Software Engineer in India</h6>
-    <p >Passionate about building delightful and impactful products that make a difference. Writer on Medium. Excited about tough problems, and always seeking to learn something new.I'm a self-driven, motivated, and
-        independent learner who discovered my passion for programming and software engineering midway through Electronics
-        degree.</p>
+    <h3 class ="name">Hey I'm {{profile.name}}</h3>
+    <h6 class="card-subtitle mb-2 text-muted">{{ profile.designation}}</h6>
+    <p >{{profile.summary}}</p>
 
     <div class="icon-bar">
-      <a href="https://www.facebook.com/jebaseelan.ravi" class="facebook"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.instagram.com/jebaseelan_ravi/" class="instagran"><i class="fa fa-instagram"></i></a>
-        <a href="https://github.com/Jebaseelanravi" class="instagran"><i class="fa fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/jebaseelan-ravi-929517135/" class="linkedin"><i class="fa fa-linkedin"></i></a>
-        <a href=mailto:jebaseelanravi96@gmail.com" class="gmail"><i class="fa fa-envelope"></i></a>
+      <a href={{profile.fb_link}} class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href={{profile.insta_link}} class="instagran"><i class="fa fa-instagram"></i></a>
+        <a href={{profile.github_link}} class="instagran"><i class="fa fa-github"></i></a>
+      <a href={{profile.linkedin_link}} class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href=mailto:{{profile.email}} class="gmail"><i class="fa fa-envelope"></i></a>
+        <br>
+        <i class="fa fa-phone" aria-hidden="true">: {{profile.phone_number}}</i>
+
     </div>
     </section>
 </div>

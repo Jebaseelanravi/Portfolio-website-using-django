@@ -58,3 +58,20 @@ class Connection(models.Model):
 
     def __str__(self):
         return self.your_name
+
+
+class Profile(models.Model):
+    name = models.CharField(max_length=100)
+    designation = models.CharField(max_length=500)
+    summary = models.CharField(max_length=5000)
+    image = models.FilePathField(path=os.path.join(settings.BASE_DIR, "myportfolio/static/img"), default="")
+    phone_number = models.CharField(max_length=100)
+    email = models.EmailField()
+    fb_link = models.URLField()
+    github_link = models.URLField()
+    insta_link = models.URLField()
+    linkedin_link = models.URLField()
+
+
+    def __str__(self):
+        return self.name

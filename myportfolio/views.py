@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, Context
-from .models import Project, Blog, Skill, Connection,Experience
+from .models import Project, Blog, Skill, Connection,Experience,Profile
 # Create your views here.
 from .forms import NameForm
 from django.core.mail import send_mail
@@ -13,8 +13,9 @@ def index(request):
     projects = Project.objects.all()
     skills = Skill.objects.all()
     experiences = Experience.objects.all().order_by('-start_date')[:5]
+    profile = Profile.objects.all().first()
     form = NameForm()
-    context = {'projects': projects, 'skills': skills, 'form': form,'experiences':experiences}
+    context = {'projects': projects, 'skills': skills, 'form': form,'experiences':experiences,'profile':profile}
     return HttpResponse(template.render(context, request))
 
 
