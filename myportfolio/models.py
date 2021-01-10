@@ -3,13 +3,19 @@ import os
 # Create your models here.
 from django.conf import settings
 from datetime import date,datetime
+import re
 
 class Project(models.Model):
+
     title = models.CharField(max_length=500)
     description = models.CharField(max_length=2000)
     github_link = models.CharField(max_length=2000)
     tech_stack = models.CharField(max_length=500)
     image = models.FilePathField(path=os.path.join(settings.BASE_DIR, "myportfolio/static/img"), default="")
+
+    @property
+    def image_path(self):
+        return re.sub('.*img/','',self.image)
 
     def __str__(self):
         return self.title
